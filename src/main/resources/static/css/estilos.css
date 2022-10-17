@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap');
+
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    font-family: 'Noto Sans JP', sans-serif;
+    background: url(../img/auditorium.jpg);
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+	object-fit: cover;
+	object-position: bottom;
+    
+}
+
+.logo{
+    width: 300px;
+    height: 180px;
+}
+
+
+nav{
+    display: flex;
+    align-items:center;
+    justify-content: space-around;
+    min-height: 8vh;
+}
+
+.ham{
+    display:none;
+    background-color:transparent;
+    cursor: pointer;
+    border:none;
+    margin:0;
+    padding:0;
+    }
+    
+.ham span{
+    background-color: #f3f3f3;
+    display:block;
+    height:3px;
+    width: 28px;
+    margin:10px auto;
+    border-radius:2px;    
+}
+
+.Titulo-Index h1{
+    width: 70%;
+    text-align: center;
+    margin: auto;
+    font-size: 80px;
+}
+
+.container{
+    width: 70%;
+    text-align: center;
+    margin: auto;
+    font-size: 40px;
+    color: rgb(211, 14, 14);
+}
+
+.authenticated{
+    display: none;
+}
+
+.btn-primary{
+    width: 20%;
+    text-align: center;
+    margin: auto;
+    background-color: rgb(145, 255, 2);
+}
+
+.enlaces-menu{
+    display:flex;
+    padding:0;
+    list-style: none;
+    justify-content: space-around;
+}
+
+.enlaces-menu li{
+    padding: 0 40px;
+    list-style-type: none;
+    transition: 0.3s;
+}
+
+.enlaces-menu li a{
+    text-decoration:none;
+    font-size: 1.8rem;
+    color:#d31414;
+    font-weight:600;
+    display: block;
+    padding: 15px 20px;
+}
+
+.enlaces-menu li:hover{
+    background-color:rgb(211, 240, 108);
+}
+
+.enlaces-menu-vertical{
+	position: absolute;
+	display: none;
+	list-style: none;
+	width: 150px;
+	background-color: rgba(8, 201, 66, 0.5);
+}
+
+.enlaces-menu li:hover .enlaces-menu-vertical{
+	display: block;
+}
+
+.enlaces-menu-vertical li a{
+	display: block;
+    font-size: 1.8rem;
+	color: white;
+    font-weight: 600;
+	text-decoration: none;
+	padding: 10px 10px;
+}
+
+.enlaces-menu-vertical li:hover{
+	background-color: rgb(71, 136, 206);
+}
+
+.enlaces-menu-vertical li{
+    padding: 0 0;
+    list-style-type: none;
+    transition: 0.5s;
+}
+
+.console{
+	display: flex;
+	align-items: center;
+}
+
+.title{
+    width: 50%;
+    text-align: center;
+    margin: auto;
+    font-size: 40px;
+}
+
+.table-front{
+    width: 40%;
+    text-align: center;
+    margin: auto;
+}
+
+h1{
+	color: aliceblue;
+}
+
+.form-control{
+	font-size: 20px;
+    width: 30%;
+    text-align: center;
+    margin: auto;
+}
+
+.form-consult{
+	font-size: 20px;
+}
+
+.consult{
+	margin: 25px auto;
+	width: 600px;
+}
+
+table{
+	background-color: white;
+	text-align: center;
+	width: 100%;
+}
+
+th, td{
+	border: solid 1px black;
+}
+
+thead{
+	background-color: #44af98;
+	border-bottom: solid 5px #0f362d;
+	color: white;
+}
+
+tr:nth-child(even){
+	background-color: #ddd;
+}
+
+tr:hover{
+	background-color: #FAF7E8;
+	color: rgb(41, 52, 160);
+}
+
+.list{
+	margin: 20px auto;
+	width: 800px;
+}
+
+.btn{
+	font-size: 18px;
+	padding: 7px;
+	color: #000000;
+}
+
+
+
+/* DISPOSITIVOS MOVILES */
+
+@media (max-width:768px) {
+    body{
+    overflow:hidden;
+    }
+    .ham{
+        display:block;
+        cursor:pointer;
+        position: absolute; 
+        top:15px;
+        right:25px;
+        transition: 0.2s  0.1s; 
+
+    }
+
+    
+    nav{
+        flex-direction:column;
+        align-items: flex-start;
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+
+    .logo{
+        padding-left:25px;
+        
+    }
+
+    .enlaces-menu{
+        
+        flex-direction:column;
+        justify-content: space-around;
+        align-items:center;
+        height: 92vh;         
+        margin:0;
+        padding:0; 
+        display:none;
+        opacity:0;
+        transition: opacity 5s ease-out;
+        width:100%;
+    
+        
+    }
+    .enlaces-menu li{
+        text-align:center;
+        width:100%;
+        padding:20px;    
+    }
+
+}
+
+/* Animaciones */
+
+@keyframes muestraMenu {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+.enlaces-menu.activado{
+    display:flex; 
+    animation: muestraMenu 350ms ease-in-out both;
+}
+
+.br-1.animado{
+    transform: rotate(-45deg) translate(-10px, 8px);
+}
+
+.br-2.animado{
+    opacity: 0;
+}
+.br-3.animado{
+    transform: rotate(45deg) translate(-10px, -8px);
+}
+
+.ham.girar:hover{
+    transform:rotate(360deg);
+}

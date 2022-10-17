@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensaje</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/mensaje.js"></script>
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="icon" href="../img/icon.png">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="#"><img class="logo" src="../img/logo.png" alt="logo"></a>
+
+            <ul class="enlaces-menu">
+                <li><a href="../index.html">Inicio</a></li>
+                <li>
+                    <a href="">Maneja tu Reserva</a>
+                    <ul class="enlaces-menu-vertical">
+                        <li><a href="principal.html">Audience</a></li>
+                        <li><a href="categoria.html">Category</a></li>
+                        <li><a href="reservacion.html">Reservation</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="">Deja tu Mensaje y Califica</a>
+                    <ul class="enlaces-menu-vertical">
+                        <li><a href="mensaje.html">Message</a></li>
+                        <li><a href="score.html">Score</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="">USUARIOS</a>
+                    <ul class="enlaces-menu-vertical">
+                        <li><a href="admin.html">Admin</a></li>
+                        <li><a href="cliente.html">Client</a></li>
+                    </ul>
+                </li>
+            </ul>
+
+            <button class="ham" type="button">   
+                <span class="br-1"></span>
+                <span class="br-2"></span>
+                <span class="br-3"></span>
+            </button>                       
+        </nav>
+    </header>
+
+
+    <h1 class="title">MENSAJE</h1>
+
+    <div class="list">
+        <div>
+            <button class="form-control btn" onclick="traerInformacion1()"> Consultar </button>
+            <button class="form-control btn" onclick="guardarInformacion1()"> Agregar </button>
+            <button class="form-control btn" onclick="editarInformacion1()"> Actualizar </button>            
+        </div>
+        <div>
+            <input type="number" id="idMessage" class="form-control" placeholder="idMessage">
+            <input type="text" id="messageText" class="form-control" placeholder="messageText">    
+        </div>
+    </div>
+    <div class="form-consult consult" id="resultado1">
+    </div>
+
+</body>
+</html>
